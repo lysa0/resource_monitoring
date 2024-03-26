@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoring Dashboard</title>
+</head>
+<body>
+    <h1>Monitoring Dashboard</h1>
+
+    {% for host in monitoring_hosts %}
+        <h2>{{ host }}</h2>
+        <img src="data:image/png;base64,{{ cpu_plot_url[host] }}" alt="CPU Usage {{ host }}">
+        <img src="data:image/png;base64,{{ ram_plot_url[host] }}" alt="RAM Usage {{ host }}">
+    {% endfor %}
+</body>
+</html>
